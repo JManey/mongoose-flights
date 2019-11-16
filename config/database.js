@@ -1,7 +1,14 @@
-const mongoose = require('mongoos');
+const mongoose = require('mongoose');
 
 
-mongoose.connect('mongodb://localhose/flights',
-{useNewUrlParser: true,
+mongoose.connect('mongodb://localhost/flights', {
+  useUnifiedTopology: true,
+  useNewUrlParser: true,
   useCreateIndex: true,
+});
+
+const db = mongoose.connection;
+
+db.on('connected', function() {
+  console.log(`Connected to MongoDB at ${db.host}:${db.port}`);
 });
