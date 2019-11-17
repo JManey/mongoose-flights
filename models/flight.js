@@ -17,9 +17,9 @@ let flightSchema = new Schema({
     max: 9999,
   },
   departs: {
-    type: Date,
-    required: true,
-    default: Date.now //+ (365*24*60*60*1000),
+      type: Date,
+      required: true,
+      default: Date.now,
   },
 
 })
