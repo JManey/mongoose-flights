@@ -1,9 +1,11 @@
 body {
-  padding: 50px;
+  height: 100vh;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background: url("../images/airplane.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: url("../images/map.png");
+  background-size: 100%;
+  background-position: center;
+  
+  /* background-repeat: no-repeat; */
 }
 
 a {
