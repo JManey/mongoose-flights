@@ -23,7 +23,7 @@ function create(req, res) {
             //////remove later in development
             console.log(flight);
             // for now redirect to new.ejs
-  res.redirect('flights/index');
+  res.redirect('flights');
   });
 };
 
