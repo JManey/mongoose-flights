@@ -11,19 +11,20 @@
     <title>Mongoose Flights</title>
 </head>
 
-<body>
+<body class="bg-secondary">
   <nav class="navbar navbar-dark bg-dark sticky-top d-flex justify-content-start">
       <a class="mr-2" href="/">Home</a>
       <a class="mr-2" href="/flights/new">Add Flight</a>
     </nav>
   <h2>Flights</h2>
 
-  <table>
-    <thead>
-      <th>Airline</th>
-      <th>Flight Number</th>
-      <th>Departure Date</th>
-      <th>Departure Time</th>
+  <table class="table table-dark table-striped table-hover table-sm">
+    <caption>List of Flights</caption>
+    <thead class=thead-dark>
+      <th scope="col">Airline</th>
+      <th scope="col">Flight Number</th>
+      <th scope="col">Departure Date</th>
+      <th scope="col">Departure Time</th>
     </thead>
   <tbody>
     <% flights.forEach(function(flight) { %>
