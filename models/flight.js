@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 
-const flightSchema = new Schema({
+
+let flightSchema = new Schema({
   airline: {
     type: String,
     required: true,
@@ -18,9 +19,13 @@ const flightSchema = new Schema({
   departs: {
     type: Date,
     required: true,
-    default: Date.now + (365*24*60*60*1000),
+    default: Date.now //+ (365*24*60*60*1000),
   },
 
-}, {
-  timestamps = true,
 })
+// ,
+  // timestamps = true,
+// )
+
+
+module.exports = mongoose.model('Flight', flightSchema);

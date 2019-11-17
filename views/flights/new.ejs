@@ -14,18 +14,23 @@
     <form action="/flights" method="POST">
         <label>Airline:
           <select name="airline">
-            <option value="Alaska">G</option>
-            <option value="American">PG</option>
-            <option value="Delta">PG-13</option>
-            <option value="Southwest">R</option>
-            <option value="Spirit">PG-13</option>
-            <option value="United">R</option>
+            <option value="Alaska">Alaska</option>
+            <option value="American">American</option>
+            <option value="Delta">Delta</option>
+            <option value="Southwest">Southwest</option>
+            <option value="Spirit">Spirit</option>
+            <option value="United">United</option>
         </select>
         </label>
         <label>Flight Number:
             <input type="number" name="flightNumber">
         </label>
-        <input type="submit" value="Add Movie">
+        <label>
+          <input type="date" name="departs">
+        </label>
+        <input type="submit" value="Add Flight">
+
+
     </form>
 </body>
 </html>
