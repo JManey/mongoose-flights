@@ -4,6 +4,7 @@ module.exports = {
   new: newFlight,
   create,
   index,
+  show,
 };
 
 function newFlight(req, res) {
@@ -13,10 +14,9 @@ function create(req, res) {
   // remove empty strings so that that
   //default mongoose values
   //will see undefined instead of ''
-  // for(let key in req.body) {
-
-  //   if(req.body[key] === '') delete req.body[key];
-  // }
+  for(let key in req.body) {
+    if(req.body[key] === '') delete req.body[key];
+  }
   let flight = new Flight(req.body);
   flight.save(function(err) {
     if(err) return res.render('flights/new');
@@ -32,3 +32,21 @@ function index(req, res) {
     res.render('flights/index', {flights});
   });
 };
+
+function show(req, res) {
+  let id = req.params.id;
+  Flight.findById(id)
+  .lean().exec(function(err, result) {
+    console.log(result)
+    if(err) return console.error(err)
+    try {
+      res.render('flights/show', {
+        result
+      })
+    } catch (error) {
+      console.log('error getting results')
+      console.log(error)
+    }
+  })
+}
+

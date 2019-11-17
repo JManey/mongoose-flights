@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mongoose Flights</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body class="bg-secondary">
+    <nav class="navbar navbar-dark bg-dark sticky-top d-flex justify-content-start">
+      <a class="mr-2" href="/">Home</a>
+      <a class="mr-2" href="/flights">Flights</a>
+    </nav>
+<% console.log(result)  %>
+<% let flight = result %>
+  <h2 class="container-fluid mx-auto text-center text-white bg-dark mb-0">Flight Details</h2>  
+    <h3 class="text-white bg-dark mb-0">Airline: <%= flight.airline %></h3>
+    <h3 class="text-white bg-dark mb-0">Fight Number: <%= flight.flightNumber %></h3>
+    <h3 class="text-white bg-dark mb-0">Departure Date: <%= flight.departs.toDateString() %></h3>
+    <h3 class="text-white bg-dark mb-0">Departure Time: <%= flight.departs.toLocaleTimeString() %></h3>
+   
+  </body>
+</html>
