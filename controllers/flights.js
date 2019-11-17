@@ -23,12 +23,12 @@ function create(req, res) {
             //////remove later in development
             console.log(flight);
             // for now redirect to new.ejs
-  res.redirect('flights');
+  res.redirect('flights/index');
   });
 };
 
 function index(req, res) {
-  Flight.find({}, function(err, flights) {
+  Flight.find({}, null, {sort: { departs: 1 }}, function(err, flights) {
     res.render('flights/index', {flights});
   });
 };
