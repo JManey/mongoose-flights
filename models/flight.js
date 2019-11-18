@@ -22,6 +22,12 @@ let flightSchema = new Schema({
     required: true,
     enum: ['Alaska', 'American', 'Delta', 'Southwest', 'Spirit', 'United'],
   },
+  airport: {
+    type: String,
+  required: true,
+  enum: ['AUS', 'DAL', 'LAX', 'SAN', 'SEA'],
+  default: 'AUS'
+  },
   flightNumber: {
     type: Number,
     required: true,
@@ -32,6 +38,7 @@ let flightSchema = new Schema({
       type: Date,
       default: Date.now(),
   },
+  destinations: [destinationsSchema],
 
 }, {timestamps: true})
 
