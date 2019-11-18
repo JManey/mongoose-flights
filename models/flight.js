@@ -2,7 +2,19 @@ const mongoose = require('mongoose');
 //shortcut to save typing
 const Schema = mongoose.Schema;
 
-
+let destinationsSchema = new Schema({
+  airport: {
+  type: String,
+  required: true,
+  enum: ['AUS', 'DAL', 'LAX', 'SAN', 'SEA'],
+  default: 'SEA'
+  },
+  arrival: {
+    type: Date,
+    default: Date.now()
+  }
+}, {timestamps: true}
+);
 
 let flightSchema = new Schema({
   airline: {
@@ -18,14 +30,11 @@ let flightSchema = new Schema({
   },
   departs: {
       type: Date,
-      required: true,
-      default: Date.now,
+      default: Date.now(),
   },
 
-})
-// ,
-  // timestamps = true,
-// )
+}, {timestamps: true})
+
 
 
 module.exports = mongoose.model('Flight', flightSchema);
