@@ -36,7 +36,7 @@ let flightSchema = new Schema({
   },
   departs: {
       type: Date,
-      default: Date.now(),
+      default: Date.now() + (366*24*60*60*1000),
   },
   destinations: [destinationsSchema],
 
