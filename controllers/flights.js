@@ -34,19 +34,30 @@ function index(req, res) {
 };
 
 function show(req, res) {
-  let id = req.params.id;
-  Flight.findById(id)
-  .lean().exec(function(err, result) {
-    console.log(result)
-    if(err) return console.error(err)
-    try {
-      res.render('flights/show', {
-        result
-      })
-    } catch (error) {
-      console.log('error getting results')
-      console.log(error)
-    }
-  })
+  Flight.findById(req.params.id, function(err, flight) {
+    res.render('flights/show', { title: 'Flight Details', flight });
+  });
 }
+
+
+
+
+
+
+// function show(req, res) {
+//   let id = req.params.id;
+//   Flight.findById(id)
+//   .lean().exec(function(err, result) {
+//     console.log(result)
+//     if(err) return console.error(err)
+//     try {
+//       res.render('flights/show', {
+//         result
+//       })
+//     } catch (error) {
+//       console.log('error getting results')
+//       console.log(error)
+//     }
+//   })
+// }
 

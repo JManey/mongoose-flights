@@ -21,7 +21,7 @@
   <table class="table table-dark table-striped table-hover table-sm">
     <caption>List of Flights</caption>
     <thead class=thead-dark>
-      <th scope="col">Changes</th>
+      <th scope="col">Details</th>
       <th scope="col">Airline</th>
       <th scope="col">Flight Number</th>
       <th scope="col">Departure Date</th>
@@ -34,7 +34,7 @@
       <% let date = flight.departs.toDateString(); %>
     <% if(date < today) { %>
       <tr>
-          <td><a href="/flights/<%= flight._id %>">Edit</a></td>
+          <td><a href="/flights/<%= flight._id %>">View</a></td>
             <td class="text-danger"><%= flight.airline %></td></a>
             <td class="text-danger"><%= flight.flightNumber %></td>
             <td class="text-danger"><%= flight.departs.toDateString() %></td>
@@ -44,7 +44,7 @@
           <tr>
           
       <% } %>
-      <td><a href="/flights/<%= flight.id %>">Edit</a></td>
+      <td><a href="/flights/<%= flight.id %>">View</a></td>
         <td><%= flight.airline %></td>
         <td><%= flight.flightNumber %></td>
         <td><%= flight.departs.toDateString() %></td>
@@ -57,15 +57,5 @@
   <!-- in the database with missing value(delete it) -->
   <!-- .toDateString() -->
 <!-- .toLocaleTimeString() -->
-<!-- js script to make rows clickable -->
-<script type="text/javascript">
-  $(document).ready(function($) {
-      $(".table-row").click(function() {
-          window.document.location = $(this).data("href");
-      });
-  });
-  </script>
-
-
 </body>
 </html>
