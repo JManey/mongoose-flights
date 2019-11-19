@@ -18,7 +18,7 @@
     <h3 class="text-white bg-dark mb-0">Departure Date: <%= flight.departs.toDateString() %></h3>
     <h3 class="text-white bg-dark mb-0">Departure Time: <%= flight.departs.toLocaleTimeString() %></h3>
    
-  <form action="/flights" method="POST" action="/flights/<%= flight._id %>/departures" class="text-white bg-dark mb-0 p-2">
+  <form action="/flights/<%= flight._id %>/departures" method="POST" class="text-white bg-dark mb-0 p-2">
     
     <label>Destination:
       <select name="airport">
@@ -34,6 +34,22 @@
     </label>
     <input type="submit" value="Update Flight">
   </form>
+  <table>
+    <thead>
+      <tr>
+        <th>Airport</th>
+        <th>Arrival</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% flight.destinations.forEach(function(r) { %>
+        <tr>
+          <td><%= r.airport %></td>
+          <td><%= r.arrival %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
 
   </body>
 </html>
