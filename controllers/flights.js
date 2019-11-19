@@ -1,4 +1,5 @@
 const Flight = require('../models/flight');
+const Ticket = require('../models/ticket');
 
 module.exports = {
   new: newFlight,
@@ -21,7 +22,7 @@ function create(req, res) {
   flight.save(function(err) {
     if(err) return res.render('flights/new');
             //////remove later in development
-            console.log(flight);
+            // console.log(flight);
             // for now redirect to new.ejs
   res.redirect('flights');
   });
@@ -35,29 +36,10 @@ function index(req, res) {
 
 function show(req, res) {
   Flight.findById(req.params.id, function(err, flight) {
-    res.render('flights/show', { title: 'Flight Details', flight });
+    Ticket.find({flight: flight._id}, function(err, tickets) {
+      
+      res.render('flights/show', { title: 'Flight Details', flight, tickets });
+    })
   });
 }
-
-
-
-
-
-
-// function show(req, res) {
-//   let id = req.params.id;
-//   Flight.findById(id)
-//   .lean().exec(function(err, result) {
-//     console.log(result)
-//     if(err) return console.error(err)
-//     try {
-//       res.render('flights/show', {
-//         result
-//       })
-//     } catch (error) {
-//       console.log('error getting results')
-//       console.log(error)
-//     }
-//   })
-// }
 

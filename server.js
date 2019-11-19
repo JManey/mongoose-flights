@@ -10,6 +10,7 @@ require('./config/database');
 const indexRouter = require('./routes/index');
 const flightsRouter = require('./routes/flights')
 const departuresRouter = require('./routes/departures');
+var ticketsRouter = require('./routes/tickets');
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/', ticketsRouter);
 app.use('/', indexRouter);
 app.use('/flights', flightsRouter);
 app.use('/', departuresRouter);

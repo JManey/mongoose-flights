@@ -29,7 +29,6 @@
     </thead>
   <tbody>
     <% flights.forEach(function(flight) { %>
-      <!-- <% console.log(flight); %> -->
       <% let today = new Date().toDateString(); %>
       <% let date = flight.departs.toDateString(); %>
     <% if(date < today) { %>
@@ -55,7 +54,6 @@
   </table>
   <!-- if the below throw an error its because you have an item  -->
   <!-- in the database with missing value(delete it) -->
-  <!-- .toDateString() -->
-<!-- .toLocaleTimeString() -->
+
 </body>
 </html>
