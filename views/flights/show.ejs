@@ -52,8 +52,25 @@
     </tbody>
   </table>
   <button>
-    <a href=":id/tickets/new">Add a Ticket</a>
+    <a href="<%= flight._id %>/tickets/new">Add a Ticket</a>
   </button>
+
+  <table class="table table-dark table-striped table-hover table-sm">
+    <thead>
+      <tr>
+        <th>Seat</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% tickets.forEach(function(ticket) { %>
+        <tr>
+          <td><%= ticket.seat %></td>
+          <td><%= ticket.price %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
 
   </body>
 </html>

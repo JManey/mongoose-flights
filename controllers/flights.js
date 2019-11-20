@@ -21,10 +21,8 @@ function create(req, res) {
   let flight = new Flight(req.body);
   flight.save(function(err) {
     if(err) return res.render('flights/new');
-            //////remove later in development
-            // console.log(flight);
-            // for now redirect to new.ejs
-  res.redirect('flights');
+            console.log(flight);
+  res.redirect('/flights');
   });
 };
 
@@ -37,7 +35,7 @@ function index(req, res) {
 function show(req, res) {
   Flight.findById(req.params.id, function(err, flight) {
     Ticket.find({flight: flight._id}, function(err, tickets) {
-      
+      console.log(`log from show function ${tickets}`)
       res.render('flights/show', { title: 'Flight Details', flight, tickets });
     })
   });

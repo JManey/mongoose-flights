@@ -17,9 +17,9 @@
       <a class="mr-2" href="/flights">Flights</a>
     </nav>
     <h2 class="text-white bg-dark mb-0 p-2">Enter a New Ticket</h2>
-    <form action="/flights" method="POST" class="text-white bg-dark mb-0 p-2">
-        
-       
+
+
+    <form action="/flights/<%= flightId %>/tickets" method="POST" class="text-white bg-dark mb-0 p-2">
         <label>Seat:
             <input type="text" name="seat">
         </label>
@@ -27,8 +27,7 @@
           <input type="number" name="price">
         </label>
         <input type="submit" value="Add Ticket">
-
-
     </form>
+    
 </body>
 </html>
