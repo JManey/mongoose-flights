@@ -29,9 +29,11 @@
     </thead>
   <tbody>
     <% flights.forEach(function(flight) { %>
-      <% let today = new Date().toDateString(); %>
-      <% let date = flight.departs.toDateString(); %>
+      <% let today = new Date(); %>
+      <% let date = flight.departs; %>
     <% if(date < today) { %>
+      <% console.log(`************` + date) %>
+      <% console.log(`************` + today) %>
       <tr>
           <td><a href="/flights/<%= flight._id %>">View</a></td>
             <td class="text-danger"><%= flight.airline %></td></a>
@@ -39,16 +41,15 @@
             <td class="text-danger"><%= flight.departs.toDateString() %></td>
             <td class="text-danger"><%= flight.departs.toLocaleTimeString() %></td>
           </tr>
-        <% }  else { %>
+        <% }  else if(date >= today) { %>
           <tr>
-          
-      <% } %>
-      <td><a href="/flights/<%= flight.id %>">View</a></td>
-        <td><%= flight.airline %></td>
-        <td><%= flight.flightNumber %></td>
-        <td><%= flight.departs.toDateString() %></td>
-        <td><%= flight.departs.toLocaleTimeString() %></td>
-      </tr>
+            <td><a href="/flights/<%= flight.id %>">View</a></td>
+            <td><%= flight.airline %></td>
+            <td><%= flight.flightNumber %></td>
+            <td><%= flight.departs.toDateString() %></td>
+            <td><%= flight.departs.toLocaleTimeString() %></td>
+          </tr>
+          <% } %>
    <% }) %>
   </tbody>
   </table>
