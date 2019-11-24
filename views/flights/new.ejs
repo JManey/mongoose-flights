@@ -1,18 +1,16 @@
 <%- include('../partials/header') %>
 
-<h2 class="text-white bg-dark mb-0 p-2">Enter a New Flight</h2>
+<!-- <h2 class="text-white bg-dark mb-0 p-2">Enter a New Flight</h2> -->
 
 <div class="card" style="width: 18rem;">
-  <div class="card-header">
-    Input Flight
-  </div>
+  <h3 class="card-header text-center">
+    Input Flight 
+  </h3>
 
 <div class="card-body">
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
+
     <form action="/flights" method="POST" class="">
   <label class="input-group-text">Airline:</label>
-  </div>
     <select class="custom-select" name="airline">
       <option value="Alaska">Alaska</option>
       <option value="American">American</option>
@@ -21,11 +19,8 @@
       <option value="Spirit">Spirit</option>
       <option value="United">United</option>
   </select>
-</div>
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
+
     <label class="input-group-text">Departing From:</label>
-  </div>
     <select class="custom-select" name="airport">
       <option value="AUS">AUS</option>
       <option value="DAL">DAL</option>
@@ -33,27 +28,17 @@
       <option value="SAN">SAN</option>
       <option value="SEA">SEA</option>
     </select>
-</div>
  
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
     <span class="input-group-text">Flight Number:</span>
-  </div>
-        <input type="number" name="flightNumber" required min="10" max="9999">
-</div>
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
+        <input class="input-group-text bg-white" type="number" style="width: 15.4rem;" name="flightNumber" required min="10" max="9999">
     <label class="input-group-text">Date:</label>
-  </div>
       <% let date = Date.now()  %>
-      <input type="datetime-local" name="departs" default="<%= date.toLocaleString %>">
-  </div>
-  
-  
-  <button class = "btn btn-success" type="submit" value="Add Flight">Submit
+      <input class="input-group-text bg-white" style="width: 15.4rem;" type="datetime-local" name="departs" default="<%= date.toLocaleString %>">
+<div class="text-center">
+  <button class = "btn btn-success m-1" type="submit" value="Add Flight">Submit
   </button>
+</div>   
 </form>
-  </div>
 </div>
 
  <%- include('../partials/footer') %>
