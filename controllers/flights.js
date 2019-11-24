@@ -9,7 +9,7 @@ module.exports = {
 };
 
 function newFlight(req, res) {
-  res.render('flights/new');
+  res.render('flights/new', {title: "Flight Tracker"});
 }
 function create(req, res) {
   // remove empty strings so that that
@@ -28,7 +28,7 @@ function create(req, res) {
 
 function index(req, res) {
   Flight.find({}, null, {sort: { departs: 1 }}, function(err, flights) {
-    res.render('flights/index', {flights});
+    res.render('flights/index', {flights, title: 'Flight Details'});
   });
 };
 

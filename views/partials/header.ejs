@@ -5,19 +5,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
-
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel='stylesheet' href='/stylesheets/style.css' />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+
     <title>Flight Tracker</title>
 </head>
 
 <body>
-  <div class="ui inverted vertical masthead center aligned segment">
+
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+    <a class="navbar-brand" href="/">Flight Tracker</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/flights">Flights
+              </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/flights/new">Add Flight</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+
+
+
+  <!-- <div class="ui inverted vertical masthead center aligned segment">
     <nav class="ui fixed inverted menu">
-      <a class="item" href="/">Home</a>
+      
       <a class="item" href="/flights">Flights</a>
       <a class="right menu item" href="/flights/new">Add Flight</a>
     </nav>
@@ -25,7 +44,7 @@
   
   <div class="ui container">
   <div class="ui dividing header"></div>
-  <div class="ui vertical masthead center aligned segment">
+  <div class="ui vertical masthead center aligned segment"> -->
     <h1><%= title %></h1>
   </div>
   </div>

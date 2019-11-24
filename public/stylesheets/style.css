@@ -1,13 +1,13 @@
 body {
-  height: 100vh;
+  /* height: 100vh;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background: url("../images/map.png");
   background-size: 100%;
   background-position: center;
   
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
 }
 
 a {
-  color: #00B7FF;
+  /* color: #00B7FF; */
 }
