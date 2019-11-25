@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 let ticketSchema = new Schema({
   seat: {
   type: String,
-  match: /[A-F][1-9]\d?/,
+  match: /[1-9][A-F]\d?/,
   required: true,
   },
   price: {

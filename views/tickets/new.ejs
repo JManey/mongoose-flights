@@ -3,7 +3,7 @@
 
     <form action="/flights/<%= flightId %>/tickets" method="POST" class="mb-0 p-2">
         <label>Seat:
-            <input type="text" name="seat" required pattern="[A-F][1-9]\d?">
+            <input type="text" name="seat" required pattern="[1-9][A-F]\d?">
         </label>
         <label>Price:
           <input type="number" name="price" required min="0">
