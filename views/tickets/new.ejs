@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 
 
-    <form action="/flights/<%= flightId %>/tickets" method="POST" class="text-white bg-dark mb-0 p-2">
+    <form action="/flights/<%= flightId %>/tickets" method="POST" class="mb-0 p-2">
         <label>Seat:
             <input type="text" name="seat" required pattern="[A-F][1-9]\d?">
         </label>

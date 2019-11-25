@@ -17,9 +17,10 @@ function create(req, res) {
     seat : req.body.seat,
     price : req.body.price
   }
+  console.log(newTicket)
   Ticket.create(newTicket, function(err, ticket) {
     if(err) res.send(err) //
-    console.log(ticket)
+    // console.log(ticket)
     res.redirect(`/flights/${req.params.id}`);
   })
 }
